@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <math.h>
+
+double estimateAge(double currentAmount, double initialAmount, double halfLife) {
+    double age = -halfLife * log(currentAmount / initialAmount);
+    return age;
+}
+
+int main() {
+    double initialAmount;  
+    double currentAmount;  
+    double halfLife;       
+
+    printf("Enter the initial amount of radioactive material: ");
+    scanf("%lf", &initialAmount);
+
+    printf("Enter the current amount of radioactive material: ");
+    scanf("%lf", &currentAmount);
+
+    printf("Enter the half-life of the radioactive material: ");
+    scanf("%lf", &halfLife);
+
+    double age = estimateAge(currentAmount, initialAmount, halfLife);
+
+    printf("Estimated age: %.2lf years\n", age);
+
+    return 0;
+}
